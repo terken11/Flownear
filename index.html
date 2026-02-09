@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +35,40 @@
       background-size: auto 100%;
       height: 38px;
     }
-  </style>
+  
+
+  .fabric-bg {
+    background-color: #f6f2ed;
+
+    background-image:
+      /* fine vertical fibers */
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,0.04) 1px,
+        transparent 1px
+      ),
+      /* fine horizontal fibers */
+      linear-gradient(
+        rgba(0,0,0,0.03) 1px,
+        transparent 1px
+      ),
+      /* soft grain */
+      radial-gradient(
+        rgba(0,0,0,0.025) 1px,
+        transparent 1px
+      );
+
+    background-size:
+      6px 6px,
+      6px 6px,
+      4px 4px;
+
+    background-position:
+      0 0,
+      0 0,
+      0 0;
+  }
+</style>
 </head>
 
 <body class="fabric-bg">
@@ -67,7 +103,7 @@
       <!-- RIGHT IMAGE -->
       <div class="flex justify-center md:justify-end">
         <img
-          src="assets/hero-model.png"
+          src="hero-model.png"
           alt="Woman holding phone and flower"
           class="max-h-[520px] object-contain"
         />
@@ -80,4 +116,6 @@
   <div class="pattern-border"></div>
 
 </body>
-    </html>
+</html>
+
+
