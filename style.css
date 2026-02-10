@@ -1,1 +1,34 @@
+/* Global font */
+body {
+  font-family: 'Playfair Display', serif;
+}
 
+/* Fabric background base */
+.fabric-bg {
+  background-color: #f6f2ed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fabric overlay (sits above image & text, below borders) */
+.fabric-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
+  background-size: 6px 6px, 6px 6px, 4px 4px;
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* Tribal pattern borders */
+.pattern-border {
+  background-image: url('https://raw.githubusercontent.com/terken11/Flownear/refs/heads/main/border-pattern.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  height: 38px;
+  position: relative;
+  z-index: 40;
+}
