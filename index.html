@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,90 +16,70 @@
       font-family: 'Playfair Display', serif;
     }
 
-    /* Fabric background */
     .fabric-bg {
       background-color: #f6f2ed;
-      background-image: url('assets/fabric-texture.png');
-      background-repeat: repeat;
-      background-size: 300px 300px;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
+      background-size: 6px 6px, 6px 6px, 4px 4px;
     }
 
-    /* Pattern borders */
     .pattern-border {
       background-image: url('https://raw.githubusercontent.com/terken11/Flownear/refs/heads/main/border-pattern.png');
       background-repeat: repeat-x;
       background-size: auto 100%;
       height: 38px;
+      position: relative;
+      z-index: 30;
     }
-  
-
-  .fabric-bg {
-    background-color: #f6f2ed;
-
-    background-image:
-      /* fine vertical fibers */
-      linear-gradient(
-        90deg,
-        rgba(255,255,255,0.04) 1px,
-        transparent 1px
-      ),
-      /* fine horizontal fibers */
-      linear-gradient(
-        rgba(0,0,0,0.03) 1px,
-        transparent 1px
-      ),
-      /* soft grain */
-      radial-gradient(
-        rgba(0,0,0,0.025) 1px,
-        transparent 1px
-      );
-
-    background-size:
-      6px 6px,
-      6px 6px,
-      4px 4px;
-
-    background-position:
-      0 0,
-      0 0,
-      0 0;
-  }
-</style>
+  </style>
 </head>
 
-<body class="fabric-bg">
+<body class="fabric-bg overflow-x-hidden">
 
   <!-- TOP BORDER -->
   <div class="pattern-border"></div>
 
   <!-- HERO -->
-<section class="overflow-visible max-w-7xl mx-auto px-8 py-24 grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+  <section class="relative max-w-7xl mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-2 items-center gap-16">
 
-      <!-- LEFT CONTENT -->
-      <div>
-        <h1 class="text-[42px] md:text-[52px] leading-tight font-semibold text-[#4a3a2e]">
-          Find fresh<br>
-          flowers near you.
-        </h1>
+    <!-- LEFT CONTENT -->
+    <div class="relative z-20">
+      <h1 class="text-[42px] md:text-[56px] leading-tight font-semibold text-[#4a3a2e]">
+        Find fresh<br>
+        flowers near you.
+      </h1>
 
-        <p class="mt-6 text-lg italic text-[#7a6a5e]">
-          Order online or pick up in-store.
-        </p>
+      <p class="mt-6 text-lg italic text-[#7a6a5e]">
+        Order online or pick up in-store.
+      </p>
 
-        <a
-          href="#"
-          class="inline-flex items-center gap-3 mt-10 bg-[#c86b2c] text-white px-8 py-4 rounded-md shadow-md hover:bg-[#b55f25] transition"
-        >
-          Download app
-          <span class="text-xl">➜</span>
-        </a>
-      </div>
+      <a
+        href="#"
+        class="inline-flex items-center gap-3 mt-10 bg-[#c86b2c] text-white px-8 py-4 rounded-md shadow-md hover:bg-[#b55f25] transition"
+      >
+        Download app
+        <span class="text-xl">➜</span>
+      </a>
+    </div>
 
-      <<!-- RIGHT IMAGE -->
-<div class="relative hidden md:block">
-  <img
-    src="https://raw.githubusercontent.com/terken11/Flownear/refs/heads/main/hero-model.png"
-    alt="Woman holding phone and flower"
+    <!-- RIGHT IMAGE (OVERLAPPING PATTERNS) -->
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 hidden md:block z-10">
+      <img
+        src="https://raw.githubusercontent.com/terken11/Flownear/refs/heads/main/hero-model.png"
+        alt="Woman holding phone and flower"
+        class="h-[980px] w-auto object-contain"
+      />
+    </div>
+
+  </section>
+
+  <!-- BOTTOM BORDER -->
+  <div class="pattern-border"></div>
+
+</body>
+</html>    alt="Woman holding phone and flower"
     class="
       absolute
       -top-24
